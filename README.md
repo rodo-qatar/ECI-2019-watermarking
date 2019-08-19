@@ -28,5 +28,38 @@ El paper de [Rabie et al (2019)](https://github.com/rodo-qatar/ECI-2019-watermar
 ### Para testear robustness:
 * Bit error rate of extracted secret data
 
+## Propuesta para subir resultados:
+Subir los resultados al directorio [/Results] como .csv con el siguiente formato de nomenclatura:
+
+```
+<Código de nombre>_<Código de métrica>_<Código de tipo de imagen>_<Cantidad de estrofas>.csv
+```
+  
+Este debe ser un archivo de 20 filas y una columna con los resultados numéricos de las 20 imágenes ordenado desde la 0 (primera fila, la de arriba) hasta la 19 (última fila la de abajo de todo).
+
+Cada código para la nomenclatura puede tomar los siguientes valores:
+
+```
+<Código de nombre> = [FRA, # Para Francisco Acha
+                      JPC, # Para Juan Pablo Caldo
+                      ROC, # Para Rodrigo Cardenas
+                      FRC, # Para Franco Castagna
+                      ELR # Para Elías Remedi]
+                      
+<Código de métrica> = [SBPS, # Para Secret Bits per Sample
+                       PSNR, # Para Peak Signal to Noise Ratio
+                       SSIM, # Para Structural Similarity
+                       FS, # Para Feature Similarity
+                       BER # Para Bit Error Rate]
+
+<Código de tipo de imagen> = [N, # Para Paisajes
+                              S, # Para Objetos inanimados
+                              P, # Para Retratos
+                              N # Para texto]
+                       
+<Cantidad de estrofas> = [1,2,3]
+```
+
 Hagan cualquier observación, crítica o cambio que crean conveniente! Aportemos todos!! :)
+
 
