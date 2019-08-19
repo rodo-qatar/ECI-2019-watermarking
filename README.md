@@ -60,6 +60,14 @@ Cada código para la nomenclatura puede tomar los siguientes valores:
 <Cantidad de estrofas> = [1,2,3]
 ```
 
+## Software a testear por cada uno:
+
+* Francisco Acha:
+* Juan Pablo Caldo: 
+* Rodrigo Cardenas: *StegHide*
+* Franco Castagna:
+* Elías Remedi: *SteganPEG*
+
 Hagan cualquier observación, crítica o cambio que crean conveniente! Aportemos todos!! :)
 
 
