@@ -48,7 +48,6 @@ Cada código para la nomenclatura puede tomar los siguientes valores:
 <Código de métrica> = [SBPS, # Para Secret Bits per Sample
                        PSNR, # Para Peak Signal to Noise Ratio
                        SSIM, # Para Structural Similarity
-                       FS, # Para Feature Similarity
                        BER # Para Bit Error Rate]
 
 <Código de tipo de imagen> = [N, # Para Paisajes
