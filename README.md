@@ -28,7 +28,7 @@ El paper de [Rabie et al (2019)](https://github.com/rodo-qatar/ECI-2019-watermar
 * Bit error rate of extracted secret data
 
 ## Propuesta para subir resultados:
-Subir los resultados al directorio [/Results] como .csv con el siguiente formato de nomenclatura:
+Subir los resultados al directorio [/Results](https://github.com/rodo-qatar/ECI-2019-watermarking/tree/master/Results) como .csv con el siguiente formato de nomenclatura:
 
 ```
 <Código de nombre>_<Código de métrica>_<Código de tipo de imagen>_<Cantidad de estrofas>.csv
