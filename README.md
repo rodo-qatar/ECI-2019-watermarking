@@ -62,7 +62,7 @@ Cada código para la nomenclatura puede tomar los siguientes valores:
 
 ## Software a testear por cada uno:
 
-* Francisco Acha:
+* Francisco Acha: *Outguess*
 * Juan Pablo Caldo: 
 * Rodrigo Cardenas: *StegHide*
 * Franco Castagna:
