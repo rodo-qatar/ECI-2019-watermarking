@@ -18,7 +18,7 @@ En el directorio [/Refs](https://github.com/rodo-qatar/ECI-2019-watermarking/tre
 El paper de [Rabie et al (2019)](https://github.com/rodo-qatar/ECI-2019-watermarking/blob/master/Refs/Rabie-2019.pdf) contiene un repaso de métricas estándar para evaluar esteganografía. Entre ellas:
 
 ### Para testear capacidad:
-* Secret bits per sample
+* Depende de la implementación de cada software. Hay que ver si para una imagen cover dada, el software que uno tiene le da información de la capacidad que permite esa imagen.
 
 ### Para testear imperceptibility:
 * [PSNR](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio) (En Python se puede usar [skimage.measure.compare_psnr](https://scikit-image.org/docs/dev/api/skimage.measure.html))
