@@ -45,8 +45,7 @@ Cada código para la nomenclatura puede tomar los siguientes valores:
                       FRC, # Para Franco Castagna
                       ELR # Para Elías Remedi]
                       
-<Código de métrica> = [SBPS, # Para Secret Bits per Sample
-                       PSNR, # Para Peak Signal to Noise Ratio
+<Código de métrica> = [PSNR, # Para Peak Signal to Noise Ratio
                        SSIM, # Para Structural Similarity
                        BER # Para Bit Error Rate]
 
