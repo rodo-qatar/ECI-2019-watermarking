@@ -19,6 +19,9 @@ text_to_hide = 'Text_to_hide.txt'
 #Seleccionar flag para guardar los archivos de salida
 output = False
 
+#Codigo del texto a ocultar
+code_text = 3
+
 #------------------------------------------------------------------
 
 #Agarrar lista de imágenes
@@ -176,3 +179,16 @@ print('| Tipo P | {:10.2f} ± {:10.2f} | {:.4f} ± {:.4f} |'.format(psnr_P.mean(
 print('+--------+-------------------------+-----------------+') 
 print('| Tipo T | {:10.2f} ± {:10.2f} | {:.4f} ± {:.4f} |'.format(psnr_T.mean(),psnr_T.std(),ssim_T.mean(),ssim_T.std()))
 print('+----------------------------------------------------+') 
+
+#Guardar los resultados en csv
+
+csv_output_name = '{}_{}_{}_{}.csv'
+
+np.savetxt(csv_output_name.format(code_user,'PSNR','N',code_text), psnr_N, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'PSNR','S',code_text), psnr_S, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'PSNR','P',code_text), psnr_P, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'PSNR','T',code_text), psnr_T, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'SSIM','N',code_text), ssim_N, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'SSIM','S',code_text), ssim_S, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'SSIM','P',code_text), ssim_P, delimiter=",")
+np.savetxt(csv_output_name.format(code_user,'SSIM','T',code_text), ssim_T, delimiter=",")
