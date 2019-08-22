@@ -21,9 +21,8 @@ El paper de [Rabie et al (2019)](https://github.com/rodo-qatar/ECI-2019-watermar
 * Secret bits per sample
 
 ### Para testear imperceptibility:
-* PSNR
-* SSIM
-* Feature similarity
+* [PSNR](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio) (En Python se puede usar [skimage.measure.compare_psnr](https://scikit-image.org/docs/dev/api/skimage.measure.html))
+* [SSIM](https://en.wikipedia.org/wiki/Structural_similarity) (En Python se puede usar [skimage.metrics.structural_similarity](https://scikit-image.org/docs/dev/api/skimage.metrics.html#skimage.metrics.structural_similarity))
 
 ### Para testear robustness:
 * Bit error rate of extracted secret data
