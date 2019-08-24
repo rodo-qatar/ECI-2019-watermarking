@@ -65,7 +65,23 @@ MOSTRAR UN EJEMPLO DE CADA TIPO
 %Briefing of features for selected softwares
 \subsection{Description of selected software}
 
-\subsubsection{\textit{OutGuess}}
+\subsubsection{\textit{OutGuess (v. 0.2)}}
+\textit{OutGuess} is  a  universal  steganographic  tool  that  allows  the  insertion  of  hidden information  into  the  
+redundant  bits of data sources.  The nature of the data source is irrelevant to the core of outguess.  The program relies on  
+data  specific  handlers  that will  extract  redundant  bits  and write them back after modification. Currently only the PPM, 
+PNM, and JPEG image formats are supported, although outguess could use  any  kind  of data, as long as a handler were provided.
+\textit{OutGuess} uses  a  generic  iterator  object  to  select  which bits in the data should be modified.  A seed can be used 
+to modify the behavior of the iterator. It  is  embedded  in the data along with the rest of the message.  
+By altering the seed, outguess tries to find a sequence of bits that minimizes the number of changes in the data that have to be 
+made.
+
+\textitA bias is introduced that favors the modification of bits that were extracted from a  high value, and tries to avoid the 
+modification of bits that were extracted from a low value.
+
+\textit Additionally,  {OutGuess}  allows  for the hiding of two distinct messages in the data, thus providing plausible 
+deniablity.  It keeps track  of  the  bits  that  have  been  modified previously  and  locks  them.   A  (23,12,7)  Golay  code  
+is used for error correction to tolerate collisions on locked bits.  Artifical errors are introduced  to  avoid  modifying bits 
+that have a high bias.
 
 \subsubsection{\textit{}}
 
