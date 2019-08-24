@@ -47,7 +47,7 @@ in terms of imperceptibility of the stego-image, capacity and robustness.
 
 \section{Materials and methods}
 
-
+\subsection{Dataset}
 
 %Dataset characterization
 Since we want to evaluate performance of steganographic tools that hide text into an image, a image dataset is needed.
@@ -60,16 +60,62 @@ Table [REF] summarizes some basic features of the dataset used such as mean imag
 images in the dataset were stored as jpeg format. DECIR AHORA EL TAMAÑO MEDIO, Y LA MEMORIA DE CADA IMAGEN
 MOSTRAR UN EJEMPLO DE CADA TIPO
 
+
+
 %Briefing of features for selected softwares
+\subsection{Description of selected software}
+
+\subsubsection{\textit{OutGuess}}
+
+\subsubsection{\textit{}}
+
+\subsubsection{\textit{StegHide (v. 0.5.1)}}
+\textit{StegHide} is an open source steganographic software that allows hide text using image or sound files as covers. (REF A LA PAGINA)
+It supports JPEG, BMP, WAV and AU file formats as cover files. 
+\textit{StegHide} performs steganography by means of a graph-theoretic approach. Data to be embedded is compressed and encrypted,
+Then a pseudo-random sequence of postions of pixels is created. On this positions secret data will be embedded. Then a
+graph-theoretic  matching  algorithm finds pairs of positions on the remaining pixels such that exchanging their values has
+the effect of embedding the corresponding  part of the secret data. If there are not enough pixels with values that can be used
+to embed the data by exchanging, values are overwroute. This way, most of the embedding  is  done  by  exchanging  pixel  values
+and then the first-order statistics is marginally changed. A passphrase must be provided by the user for encryption and
+pseudo-random generator initialization. The same passphrase must be provided for data extraction from stego-file. The default
+encryption algorithm is Rijndael with a key of 128 bits altough others are available as well.
+
+
+
+\subsubsection{\textit{}}
+
+\subsubsection{\textit{SteganPEG}}
+
 %Imperceptibility, capacity and robustness assessment
+\subsection{Benchmarking}
+
+Some criteria and metrics needs to be established in order to to benchmark the selected software.
+In this section metrics for imperceptibility assessment are presented as well as criteria regarding capacity of storage for
+hidden data and tests for robustness evaluation.
+
+\subsubsection{Imperceptibility}
+
+\subsubsection{Capacity}
+
+\subsubsection{Robustness}
+
 
 \section{Results}
 
+
 %Show imperceptibility, capacity and robustness results
+\subsection{Imperceptibility}
+
+\subsection{Capacity}
+
+\subsection{Robustness}
+
 
 \section{Discussion and Conclusion}
 
 
+\section{References}
 
 
 
