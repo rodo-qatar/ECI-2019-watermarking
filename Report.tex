@@ -29,15 +29,37 @@ Acha Francisco, Caldo Juan Pablo, Cardenas Rodrigo, Castagna Franco and Remedi E
 \section{Introduction}
 
 %Define steganography
+Steganography is the procedure of insert information inside a data source without changing its perceptual quality.
+Digital steganography uses digital data sources as a cover for hidden information. Examples of digital covers
+are digital text files, image files and sound files among others.  
+
 %Introduce context for steganographic methods on images
+In particular for digital image based steganography the pixel intensity is usually used for encoding information [REF]
+but other approaches are also widely used such as embedding information in the frequency domain.
+
 %Review steganography over images (main features)
 %Tell about software available for digital image-steganography
-%Describe goals of current assignment
+There are available many software tools 
 
+%Describe goals of current assignment
+In this report, five steganographic tools that hides text into a digital image were chosen to perform an assessment 
+in terms of imperceptibility of the stego-image, capacity and robustness.
 
 \section{Materials and methods}
 
+
+
 %Dataset characterization
+Since we want to evaluate performance of steganographic tools that hide text into an image, a image dataset is needed.
+We built a dataset containg images 20 of four types: N-type (landscapes and open nature), S-type (still life), P-type (portraits) and
+T-type (text). The complete dataset is then 80 images in total. N, S, P-type images were obtained and selected from Google images search engine queries.
+Namely, keywords for queries were \textit{landscapes}, \textit{still life} and \textit{portrait} respectively.
+Right usage for the images was selected such that results were labeled for noncommercial reuse, and size of the images was set in 
+medium [NOTA AL PIE DE LA FECHA]. Text images were collected from research papers by exporting pages as jpeg images.
+Table [REF] summarizes some basic features of the dataset used such as mean image size and mean file size. All the
+images in the dataset were stored as jpeg format. DECIR AHORA EL TAMAÑO MEDIO, Y LA MEMORIA DE CADA IMAGEN
+MOSTRAR UN EJEMPLO DE CADA TIPO
+
 %Briefing of features for selected softwares
 %Imperceptibility, capacity and robustness assessment
 
