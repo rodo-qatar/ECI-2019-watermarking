@@ -62,7 +62,7 @@ Cada código para la nomenclatura puede tomar los siguientes valores:
 * Francisco Acha: *Outguess*
 * Juan Pablo Caldo: 
 * Rodrigo Cardenas: *StegHide*
-* Franco Castagna:
+* Franco Castagna: *SilentEye*
 * Elías Remedi: *SteganPEG*
 
 Hagan cualquier observación, crítica o cambio que crean conveniente! Aportemos todos!! :)
