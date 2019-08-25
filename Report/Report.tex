@@ -9,6 +9,14 @@
 \voffset -2.9cm
 \hoffset -2.0cm
 
+\usepackage{booktabs}
+
+\newcommand{\subf}[2]{%
+  {\small\begin{tabular}[t]{@{}c@{}}
+  #1\\#2
+  \end{tabular}}%
+}
+
 \begin{document}
 \pagestyle{empty}
 
@@ -55,32 +63,75 @@ We built a dataset containg images 20 of four types: N-type (landscapes and open
 T-type (text). The complete dataset is then 80 images in total. N, S, P-type images were obtained and selected from Google images search engine queries.
 Namely, keywords for queries were \textit{landscapes}, \textit{still life} and \textit{portrait} respectively.
 Right usage for the images was selected such that results were labeled for noncommercial reuse, and size of the images was set in 
-medium [NOTA AL PIE DE LA FECHA]. Text images were collected from research papers by exporting pages as jpeg images.
-Table [REF] summarizes some basic features of the dataset used such as mean image size and mean file size. All the
-images in the dataset were stored as jpeg format. DECIR AHORA EL TAMAÑO MEDIO, Y LA MEMORIA DE CADA IMAGEN
-MOSTRAR UN EJEMPLO DE CADA TIPO
+medium. Text images were collected from research papers by exporting pages as jpeg images.
+Table \ref{Tab:Features} summarizes some basic features of the dataset used such as mean image size and mean file size. All the
+images in the dataset were stored as jpeg format. Figure \ref{Fig:Dataset_example} shows some examples of images of each type.
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Dataset_example.jpeg}
+\caption{Two examples for each type from the built dataset are shown. On first column from left, type N images (landscape) are displayed.
+On second column type P (portrait) images are shown. Third and fourth columns shows type S (still life) and type T (text) images respectively. }
+\label{Fig:Dataset_example}
+\end{figure}
 
+TEXTO!!
+
+\begin{table}[!h] 
+\caption{Dataset features.}
+\label{Tab:Features}
+\begin{tabular}{lclclclclc}
+\hline
+\hline 
+Feature &  Image type\\
+\hline
+\midrule
+{}       & N (landscapes)   & S (still life)    & P (portrait)   & T (text)\\
+mean height [pixels] $\pm$ std  &  600 $\pm$ 100 & 600 $\pm$ 100   & 700 $\pm$ 200  & 1500 $\pm$ 100 \\
+mean width [pixels] $\pm$ std   &  900 $\pm$ 200 & 800 $\pm$ 200   & 700 $\pm$ 200  &  1100 $\pm $200 \\
+mean size [kBytes] $\pm$ std    &  200 $\pm$ 100 & 150 $\pm$ 70    & 120 $\pm$ 50   &  300 $\pm$ 100\\
+\hline
+\end{tabular}
+\end{table}
+
+% 
+% \begin{figure}
+% \centering
+% \begin{tabular}{|c|c|}
+% \hline
+% \subf{\includegraphics[width=60mm]{SSIM.png}}
+% %      {``iteraciones máximas \\ de BT''$=20$}
+% &
+% \subf{\includegraphics[width=60mm]{SSIM.png}}
+% %      {``Periodo de Tenencia \\ en Lista Tabú''$=2$}
+% \\
+% \hline
+% \subf{\includegraphics[width=60mm]{SSIM.png}}
+% %      {``iteraciones máximas \\ de BT''$=20$}
+% &
+% \subf{\includegraphics[width=60mm]{SSIM.png}}
+% %      {``Periodo de Tenencia \\ en Lista Tabú''$=2$}
+% \\
+% \hline
+% \end{tabular}
+% \end{figure}
 
 %Briefing of features for selected softwares
 \subsection{Description of selected software}
 
 \subsubsection{\textit{OutGuess (v. 0.2)}}
-\textit{OutGuess} is  a  universal  steganographic  tool  that  allows  the  insertion  of  hidden information  into  the  
-redundant  bits of data sources.  The nature of the data source is irrelevant to the core of outguess.  The program relies on  
-data  specific  handlers  that will  extract  redundant  bits  and write them back after modification. Currently only the PPM, 
-PNM, and JPEG image formats are supported, although outguess could use  any  kind  of data, as long as a handler were provided.
-\textit{OutGuess} uses  a  generic  iterator  object  to  select  which bits in the data should be modified.  A seed can be used 
-to modify the behavior of the iterator. It  is  embedded  in the data along with the rest of the message.  
-By altering the seed, outguess tries to find a sequence of bits that minimizes the number of changes in the data that have to be 
-made.
-
-\textit A bias is introduced that favors the modification of bits that were extracted from a  high value, and tries to avoid the 
+\textit{OutGuess} is a universal steganographic tool that allows the insertion of hidden information into the  
+redundant  bits of data sources. The nature of the data source is irrelevant to the core of \textit{OutGuess}.  The program relies on  
+data specific handlers that will extract redundant bits and write them back after modification. Currently only the PPM, 
+PNM, and JPEG image formats are supported, although \textit{OutGuess} could use  any  kind  of data, as long as a handler were provided.
+\textit{OutGuess} uses  a  generic  iterator  object  to  select  which bits in the data should be modified. A seed can be used 
+to modify the behavior of the iterator. It is embedded in the data along with the rest of the message.  
+By altering the seed, \textit{OutGuess} tries to find a sequence of bits that minimizes the number of changes in the data that have to be 
+made. \textit A bias is introduced that favors the modification of bits that were extracted from a high value, and tries to avoid the 
 modification of bits that were extracted from a low value.
-
-Additionally,  \textit{OutGuess}  allows  for the hiding of two distinct messages in the data, thus providing plausible 
-deniablity.  It keeps track  of  the  bits  that  have  been  modified previously  and  locks  them.   A  (23,12,7)  Golay  code  
-is used for error correction to tolerate collisions on locked bits.  Artifical errors are introduced  to  avoid  modifying bits 
+Additionally, \textit{OutGuess}  allows  for the hiding of two distinct messages in the data, thus providing plausible 
+deniablity.  It keeps track of the bits that have been modified previously and locks them. A (23,12,7)  Golay  code  
+is used for error correction to tolerate collisions on locked bits.  Artificial errors are introduced to avoid modifying bits 
 that have a high bias.
 
 \subsubsection{\textit{}}
@@ -101,7 +152,7 @@ encryption algorithm is Rijndael with a key of 128 bits altough others are avail
 
 
 \subsubsection{\textit{SilentEye}}
-SilentEye is a cross-platform steganographic software that allows to hide messages into pictures or sounds. It´s free and it´s open source. It can be used in Microsoft Windows, Mac OS X and Linux. \\
+SilentEye is a cross-platform steganographic software that allows to hide messages into pictures or sounds. It is free and it is open source. It can be used in Microsoft Windows, Mac OS X and Linux. \\
 This software supports JPEG, BMP and WAVE format cover files. It provides too, with all its versions, a simple graphical interface and from version 4.4 the option to be used through the command line. \\
 In SilentEye you can drag and drop to encode and decode data. The encoding window allows you to choose encoding format, output image’s quality and other settings. You can have a .txt or any other file ready and merge it directly with the cover file or write a message directly into the program in order to hide it inside the file.\\
 This tool informs us the number of bytes available to hide in the selected cover image \\
@@ -132,6 +183,7 @@ different amount of data given the same cover. Capacity for digital image-based 
 
 
 \subsubsection{Robustness}
+\label{Subsubsec:Robustness}
 
 Robustness of a steganographic medium is the property of keep the secret information undestroyed under transformation or 
 tampering of the stego-file. Sistematic assessment of robustness can be done by applying known transformations to the stego-file
@@ -146,10 +198,31 @@ stretching by 30\%; vertical mirroring; and 20$^o$ counter clock-wise rotation.
 %Show imperceptibility, capacity and robustness results
 \subsection{Imperceptibility}
 
+In Figure \ref{Fig:PSNR} and Figure \ref{Fig:SSIM} results for PSNR and SSIM are respectively shown.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{PSNR.png}
+\caption{}
+\label{Fig:PSNR}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{SSIM.png}
+\caption{}
+\label{Fig:SSIM}
+\end{figure}
+
 \subsection{Capacity}
+
+\textit{StegHide} 
+
 
 \subsection{Robustness}
 
+\textit{StegHide} have shown no robustness at all. Any of the five transformations mentioned on Section \ref{Subsubsec:Robustness}
+made \textit{StegHide} unable to recover the hidden data.
 
 \section{Discussion and Conclusion}
 
