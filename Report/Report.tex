@@ -29,7 +29,7 @@
 \end{center}
 
 \begin{center}
-Acha Francisco, Caldo Juan Pablo, Cardenas Rodrigo, Castagna Franco and Remedi Elias.
+Acha Francisco, Cardenas Rodrigo and Castagna Franco.
 \end{center}
 
 %% ABSTRACT!! (At the end)
@@ -42,15 +42,16 @@ Digital steganography uses digital data sources as a cover for hidden informatio
 are digital text files, image files and sound files among others.  
 
 %Introduce context for steganographic methods on images
-In particular for digital image based steganography the pixel intensity is usually used for encoding information [REF]
-but other approaches are also widely used such as embedding information in the frequency domain.
+In particular for digital image based steganography the pixel intensity is usually used for encoding information 
+but other approaches are also widely used such as embedding information in the frequency domain \cite{Shih-Book}.
 
 %Review steganography over images (main features)
 %Tell about software available for digital image-steganography
-There are available many software tools 
+
 
 %Describe goals of current assignment
-In this report, five steganographic tools that hides text into a digital image were chosen to perform an assessment 
+There are available many software tools to perform digital image-based steganography.
+In this report, three steganographic tools that hides text into a digital image were chosen to perform an assessment 
 in terms of imperceptibility of the stego-image, capacity and robustness.
 
 \section{Materials and methods}
@@ -66,6 +67,7 @@ Right usage for the images was selected such that results were labeled for nonco
 medium. Text images were collected from research papers by exporting pages as jpeg images.
 Table \ref{Tab:Features} summarizes some basic features of the dataset used such as mean image size and mean file size. All the
 images in the dataset were stored as jpeg format. Figure \ref{Fig:Dataset_example} shows some examples of images of each type.
+The text to be embeded was 472 bytes in size and had 466 characters and 89 words \footnote{The text comprises the first three stanzas of the celebrated Argentine text from José Hernández: Martín Fierro.}.  
 
 \begin{figure}[h]
 \centering
@@ -75,7 +77,7 @@ On second column type P (portrait) images are shown. Third and fourth columns sh
 \label{Fig:Dataset_example}
 \end{figure}
 
-TEXTO!!
+
 
 \begin{table}[!h] 
 \caption{Dataset features.}
@@ -134,10 +136,10 @@ deniablity.  It keeps track of the bits that have been modified previously and l
 is used for error correction to tolerate collisions on locked bits.  Artificial errors are introduced to avoid modifying bits 
 that have a high bias.
 
-\subsubsection{\textit{}}
+% \subsubsection{\textit{}}
 
 \subsubsection{\textit{StegHide (v. 0.5.1)}}
-\textit{StegHide} is an open source steganographic software that allows hide text using image or sound files as covers. (REF A LA PAGINA)
+\textit{StegHide} is an open source steganographic software that allows hide text using image or sound files as covers. 
 It supports JPEG, BMP, WAV and AU file formats as cover files. 
 \textit{StegHide} performs steganography by means of a graph-theoretic approach. Data to be embedded is compressed and encrypted,
 Then a pseudo-random sequence of postions of pixels is created. On this positions secret data will be embedded. Then a
@@ -152,13 +154,13 @@ encryption algorithm is Rijndael with a key of 128 bits altough others are avail
 
 
 \subsubsection{\textit{SilentEye}}
-SilentEye is a cross-platform steganographic software that allows to hide messages into pictures or sounds. It is free and it is open source. It can be used in Microsoft Windows, Mac OS X and Linux. \\
+\textit{SilentEye} is a cross-platform steganographic software that allows to hide messages into pictures or sounds. It is free and it is open source. It can be used in Microsoft Windows, Mac OS X and Linux. \\
 This software supports JPEG, BMP and WAVE format cover files. It provides too, with all its versions, a simple graphical interface and from version 4.4 the option to be used through the command line. \\
-In SilentEye you can drag and drop to encode and decode data. The encoding window allows you to choose encoding format, output image’s quality and other settings. You can have a .txt or any other file ready and merge it directly with the cover file or write a message directly into the program in order to hide it inside the file.\\
-This tool informs us the number of bytes available to hide in the selected cover image \\
-SilentEye also can encrypt the message before hide it into the cover file. The default encryption algorithm is Rijndael with a key of 128 bits although other option is Rijndael with a key of 256 bits.
+In \textit{SilentEye} you can drag and drop to encode and decode data. The encoding window allows you to choose encoding format, output image’s quality and other settings. You can have a .txt or any other file ready and merge it directly with the cover file or write a message directly into the program in order to hide it inside the file.\\
+This tool informs us the number of bytes available to hide in the selected cover image.
+\textit{SilentEye} also can encrypt the message before hide it into the cover file. 
 
-\subsubsection{\textit{SteganPEG}}
+% \subsubsection{\textit{SteganPEG}}
 
 %Imperceptibility, capacity and robustness assessment
 \subsection{Benchmarking}
@@ -172,7 +174,7 @@ hidden data and tests for robustness evaluation.
 Imperceptibility is a measure of how much the stego-file
 looks like the original cover file. Is a critical attribute of a steganography system. Having a poor imperceptibility level will make it 
 easier for an eavesdropper to detect the presence of a secret message. For imperceptibility assessment we have selected
-two widely known metrics namely, Peak Signal to Noise Ratio (PSNR) and Structural Similarity (SSIM).
+two widely known metrics namely, Peak Signal to Noise Ratio (PSNR) and Structural Similarity (SSIM) \cite{Rabie-2019}.
 
 \subsubsection{Capacity}
 
@@ -200,35 +202,73 @@ stretching by 30\%; vertical mirroring; and 20$^o$ counter clock-wise rotation.
 
 In Figure \ref{Fig:PSNR} and Figure \ref{Fig:SSIM} results for PSNR and SSIM are respectively shown.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{PSNR.png}
-\caption{}
+\includegraphics[scale=0.4]{PSNR.png}
+\caption{Peak Signal to Noise Ratio for each software and each image type.}
 \label{Fig:PSNR}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{SSIM.png}
-\caption{}
+\includegraphics[scale=0.4]{SSIM.png}
+\caption{Structural Similarity for each software and each image type.}
 \label{Fig:SSIM}
 \end{figure}
 
 \subsection{Capacity}
 
-\textit{StegHide} 
+Each software provides an option to evaluate the capacity for a given image. For the dataset used, capacity was obtained
+relative to each image size and the mean was computed. Results are shown in Table \ref{Tab:Capacity}.
+
+
+\begin{table}[!h] 
+\caption{Capcity results for each software.}
+\label{Tab:Capacity}
+\begin{tabular}{lclc}
+\hline
+\hline 
+Software &  Capacity per kBytes of cover image [kBytes] \\
+\hline
+\midrule
+{}       &   \\
+OutGuess  &  0.10  \\
+StegHide  &  0.05 \\
+SilentEye   &  0.01 \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \subsection{Robustness}
 
-\textit{StegHide} have shown no robustness at all. Any of the five transformations mentioned on Section \ref{Subsubsec:Robustness}
-made \textit{StegHide} unable to recover the hidden data.
+None of the three softwares have shown robustness at all. Any of the five transformations mentioned on Section 
+\ref{Subsubsec:Robustness} made unable to recover the hidden data.
 
 \section{Discussion and Conclusion}
 
 
-\section{References}
+% \section{References}
 
+  \begin{thebibliography}{1}
+
+  \bibitem{Shih-Book} F. Shih {\em Digital Watermarking and Steganography: Fundamentals and Techniques
+(Second Edition)} 2017. CRC Press.					
+  
+  \bibitem{Rabie-2019} T. Rabie, M. Baziyad, T. Bonny, R. Fareh {\em Toward a Unified Performance Metric for Benchmarking
+Steganography Systems} 2019. Journal of Circuits, Systems and Computers. World Scientific Publishing Company.
+
+%   \bibitem{impj}  The Japan Reader {\em Imperial Japan 1800-1945} 1973:
+%   Random House, N.Y.
+% 
+%   \bibitem{norman} E. H. Norman {\em Japan's emergence as a modern
+%   state} 1940: International Secretariat, Institute of Pacific
+%   Relations.
+% 
+%   \bibitem{fo} Bob Tadashi Wakabayashi {\em Anti-Foreignism and Western
+%   Learning in Early-Modern Japan} 1986: Harvard University Press.
+
+  \end{thebibliography}
 
 
 \end{document}
