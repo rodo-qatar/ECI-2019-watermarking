@@ -246,7 +246,17 @@ None of the three softwares have shown robustness at all. Any of the five transf
 \ref{Subsubsec:Robustness} made unable to recover the hidden data.
 
 \section{Discussion and Conclusion}
-
+All the tested software performed remarkably differently in terms of the type of image in which they hid the text. StegHide had 
+the best overall performance except for text images, where each had a similar performance.
+It is striking that no software was robust in preserving the integrity of the hidden text, after altering the image in small 
+proportions.
+Even taking into account that we stayed within the base parameters (limit of the length of the text in bytes per byte of the 
+image in which to hide said text) established by each of the proven steganography software.
+However, we tried to substantially reduce the length of the text to be hidden below the limits established by each software and 
+we found that in the case of OutGuess, reducing the length of the text to be hidden by 80p, it was possible to decode it even 
+after having made the alterations previously mentioned.
+It would be interesting to find out what is said threshold for each of the software tested and in the future include these 
+results in the official bibliography for each software.
 
 % \section{References}
 
