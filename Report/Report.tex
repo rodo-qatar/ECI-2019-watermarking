@@ -154,8 +154,8 @@ encryption algorithm is Rijndael with a key of 128 bits altough others are avail
 
 
 \subsubsection{\textit{SilentEye}}
-\textit{SilentEye} is a cross-platform steganographic software that allows to hide messages into pictures or sounds. It is free and it is open source. It can be used in Microsoft Windows, Mac OS X and Linux. \\
-This software supports JPEG, BMP and WAVE format cover files. It provides too, with all its versions, a simple graphical interface and from version 4.4 the option to be used through the command line. \\
+\textit{SilentEye} is a cross-platform steganographic software that allows to hide messages into pictures or sounds. It is free and it is open source. It can be used in Microsoft Windows, Mac OS X and Linux. 
+This software supports JPEG, BMP and WAVE format cover files. It provides too, with all its versions, a simple graphical interface and from version 4.4 the option to be used through the command line. 
 In \textit{SilentEye} you can drag and drop to encode and decode data. The encoding window allows you to choose encoding format, output image’s quality and other settings. You can have a .txt or any other file ready and merge it directly with the cover file or write a message directly into the program in order to hide it inside the file.\\
 This tool informs us the number of bytes available to hide in the selected cover image.
 \textit{SilentEye} also can encrypt the message before hide it into the cover file. 
@@ -180,8 +180,17 @@ two widely known metrics namely, Peak Signal to Noise Ratio (PSNR) and Structura
 
 Capacity refers to the size of the hidden secret data that a steganographic system is able to embed into to the cover
 medium. Capacity of a steganographic system depends on the method used to hide data. Hence, different systems can embed
-different amount of data given the same cover. Capacity for digital image-based steganograpy can be computed as 
-(PONER ECUACIÓN) [REF]
+different amount of data given the same cover. Capacity for digital image-based steganograpy can be computed as \cite{Shih-Book}:
+
+\begin{equation}
+ C = \frac{P_{secret}N}{P_{cover}} B
+ \label{Eq:Capacity}
+\end{equation}
+
+\noindent where $P_{secret}$ is the number of secret pixels, $N$ is the number of bits per pixel, $P_{cover}$ is the 
+number of pixels in the entire cover image and $B$ is the number of image channels, which can be 3 for RGB representation
+or 1 if the cover image is represented as grayscale.
+
 
 
 \subsubsection{Robustness}
@@ -219,7 +228,8 @@ In Figure \ref{Fig:PSNR} and Figure \ref{Fig:SSIM} results for PSNR and SSIM are
 \subsection{Capacity}
 
 Each software provides an option to evaluate the capacity for a given image. For the dataset used, capacity was obtained
-relative to each image size and the mean was computed. Results are shown in Table \ref{Tab:Capacity}.
+relative to cover image size and the mean was computed. This way, a capacity per size of cover image
+es estimated. Results are shown in Table \ref{Tab:Capacity}.
 
 
 \begin{table}[!h] 
@@ -246,29 +256,18 @@ None of the three softwares have shown robustness at all. Any of the five transf
 \ref{Subsubsec:Robustness} made unable to recover the hidden data.
 
 \section{Discussion and Conclusion}
-All the tested software performed remarkably differently in terms of the type of image in which they hid the text. StegHide had 
-the best overall performance except for text images, where each had a similar performance.
-It is striking that no software was robust in preserving the integrity of the hidden text, after altering the image in small 
-proportions.
-Even taking into account that we stayed within the base parameters (limit of the length of the text in bytes per byte of the 
-image in which to hide said text) established by each of the proven steganography software.
-However, we tried to substantially reduce the length of the text to be hidden below the limits established by each software and 
-we found that in the case of OutGuess, reducing the length of the text to be hidden by 80p, it was possible to decode it even 
-after having made the alterations previously mentioned.
-It would be interesting to find out what is said threshold for each of the software tested and in the future include these 
-results in the official bibliography for each software.
-
-
-
-Thanks to the analysis of the different results obtained, we are able to draw several conclusions regarding these steganography tools.\\
-As for imperceptibility, the three tools have similar performance depending on the type of image, except in text images, where the performance is better.\\
-If we talk about robustness, it is interesting that none of the tools analyzed are robust to transformations.
-We believe that this, on a practical level, could cause problems. An attacker could easily transform the image and it would be impossible to recover the information.\\
-As for capacity, we observe that Outguess tool is recommended to work with larger messages.\\
-In steganography, we want to keep the image as similar as possible to the original. We see as a disadvantage of these tools to have restrictions with the image formats. This sometimes forces the image to be converted to another image format, and causes loss of information.\\
-This disadvantage, and the fact that some of these tools are open source, make us find interesting, as a future work, to improve the tools to work with more image formats.
-
-
+Imperceptibility for every tested software was not affected when N, S and P image types were used as cover.
+However, \textit{StegHide} had the best overall performance except for text images, where each software had a similar performance. 
+It is striking that no software was robust in preserving the integrity of the hidden text, after altering the image in small proportions.
+An attacker could easily transform the stego-image and it would be impossible to recover the information. 
+We have tested non exhaustivley if reducing the length of the text to be
+hidden could overcome this issue. Only on the case of \textit{OutGuess}, a reduction of the embeded text by 80\% enabled extraction of hidden data on altered stego-files.
+But further tests should be carried out to confirm
+if this threshold is accurate or if even this occurs as well on the remaining steganographic tools.
+Regarding capacity, we observed that \textit{OutGuess} is recommended to work with large messages.
+We see as a disadvantage for these tools to have restrictions for input image formats. 
+This sometimes forces the image to be converted to another image format, and causes loss of information.
+Since some of these tools are open source, it would be interesting, as a future work, to improve these tools in order to work with more image formats.
 
 % \section{References}
 
